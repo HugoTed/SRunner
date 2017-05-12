@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class reload_Scenes : MonoBehaviour {
     public string levelname;
-	// Use this for initialization
-	void Start () {
+    public string lastname;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -13,8 +15,14 @@ public class reload_Scenes : MonoBehaviour {
 	void Update () {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.LoadLevel(levelname);
+            SceneManager.LoadScene(levelname);
+            //Application.LoadLevel(levelname);
         }
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            SceneManager.LoadScene(lastname);
+            Cursor.visible = true;//鼠标
+            //Application.LoadLevel(lastname);
+        }
+    }
 }
