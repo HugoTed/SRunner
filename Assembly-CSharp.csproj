@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C4EFF569-1979-715A-18A9-53590E3A9E06}</ProjectGuid>
+    <ProjectGuid>{A791FCDB-59CE-720E-6C0A-104D0A92F73E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,6 +61,8 @@
      <Compile Include="Assets\Scripts\System\ShowFPS_OnGUI.cs" />
      <Compile Include="Assets\Scripts\System\reload_Scenes.cs" />
      <Compile Include="Assets\Scripts\UI\UIEnemyHp.cs" />
+     <Compile Include="Assets\Scripts\UI\UILoad.cs" />
+     <Compile Include="Assets\Scripts\UI\startmanager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
