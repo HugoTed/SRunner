@@ -62,6 +62,9 @@
      <Compile Include="Assets\Scripts\System\reload_Scenes.cs" />
      <Compile Include="Assets\Scripts\UI\UIEnemyHp.cs" />
      <Compile Include="Assets\Scripts\UI\UILoad.cs" />
+     <Compile Include="Assets\Scripts\UI\UImain.cs" />
+     <Compile Include="Assets\Scripts\UI\UIoption.cs" />
+     <Compile Include="Assets\Scripts\UI\UIoptionslidertextshow.cs" />
      <Compile Include="Assets\Scripts\UI\startmanager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
