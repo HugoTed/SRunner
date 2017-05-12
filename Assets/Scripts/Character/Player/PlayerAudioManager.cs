@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAudioManager : MonoBehaviour {
-    public AudioSource[] music;
-    public float musicVolume;
+    public AudioSource[] txmusic;
+    public float txmusicVolume;
     public player player;
     public PlayerAttack playerAttack;
     // Use this for initialization
     void Start () {
-        musicVolume = 1F;
+        if (PlayerPrefs.GetInt("TogMusic") == 1)
+        {
+            txmusicVolume = PlayerPrefs.GetFloat("TXMusic");
+        }
+        else { txmusicVolume = 0.0f; }
         
     }
 	
@@ -18,49 +22,51 @@ public class PlayerAudioManager : MonoBehaviour {
         //slide
         if(player.ifOnWall() && player.vspeed()>0)
         {
-            if (!music[0].isPlaying)
+            if (!txmusic[0].isPlaying)
             {
                 //播放音乐
                 Debug.Log("wallmusic");
-                music[0].Play();
+                txmusic[0].volume = txmusicVolume;
+                txmusic[0].Play();
             }
         }
         else
         {
-            if (music[0].isPlaying)
+            if (txmusic[0].isPlaying)
             {
                 //stop音乐
-                music[0].Stop();
+                txmusic[0].Stop();
             }
         }
         //jump-跳跃
         if (Input.GetButton("Jump"))
         {
-            if (!music[1].isPlaying)
+            if (!txmusic[1].isPlaying)
             {
                 //播放跳跃音乐
-
-                music[1].Play();
+                txmusic[1].volume = txmusicVolume;
+                txmusic[1].Play();
                 //music[1].PlayDelayed(-1);
                 Debug.Log("jumpmusic");
             }
         }
         else
         {
-            if (music[1].isPlaying)
+            if (txmusic[1].isPlaying)
             {
                 //stop跳跃音乐
-                music[1].Stop();
+                txmusic[1].Stop();
             }
         }
         //attack-砍击
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (!music[2].isPlaying)
+            if (!txmusic[2].isPlaying)
             {
                 //播放砍击音乐
                 Debug.Log("attackmusic");
-                music[2].Play();
+                txmusic[2].volume = txmusicVolume;
+                txmusic[2].Play();
             }
         }
 

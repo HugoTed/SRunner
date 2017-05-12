@@ -87,6 +87,16 @@ public class UIoption : MonoBehaviour {
         PlayerPrefs.SetFloat("BGMusic", BGMusic);
         PlayerPrefs.SetFloat("TXMusic", TXMusic);
         PlayerPrefs.SetFloat("TSMusic", TSMusic);
+
+        if (PlayerPrefs.GetInt("TogFullScreen") == 1)
+        {
+            if (!Screen.fullScreen) { Screen.SetResolution(Screen.width, Screen.height, true); }
+        }
+        else
+        {
+            if (Screen.fullScreen) { Screen.SetResolution(Screen.width, Screen.height, false); }
+        }
+
         SceneManager.LoadScene(lastscene);
     }
     public void onquitbutton() {

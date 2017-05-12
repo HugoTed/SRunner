@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class reload_Scenes : MonoBehaviour {
-    public string levelname = "demo1";
+    public string levelname;
 	// Use this for initialization
 	void Start () {
 		
