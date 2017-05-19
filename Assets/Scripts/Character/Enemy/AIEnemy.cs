@@ -133,22 +133,22 @@ public class AIEnemy : Unit {
             return;
         state = newState;
 
-        string animName = "Idle";
+        string animName = "idle";
         switch (state)
         {
             case NORMAL:
-                animName = "Idle";
+                animName = "idle";
                 break;
             case RUN:
-                animName = "Run";
+                animName = "runforward";
                 break;
             case ROTATION:
-                animName = "Run";
+                animName = "idle";
                 //当敌人为旋转时， 开始随机旋转的角度系数
                 rotation_state = getRandom(4);
                 break;
             case CHASE:
-                animName = "Run";
+                animName = "runforward";
                 //当敌人进入追击状态时，将面朝主角方向奔跑
                 this.transform.LookAt(newplayerpoint);
                 //player.transform
@@ -206,12 +206,12 @@ public class AIEnemy : Unit {
             case RUN:
                 //奔跑状态，敌人向前奔跑
                 //if (isground)
-                    transform.Translate(Vector3.forward * 0.02f); 
+                    transform.Translate(Vector3.forward * 0.2f); 
                 break;
             case CHASE:
                 //追击状态 敌人向前开始追击
                 //if (isground)
-                    transform.Translate(Vector3.forward * 0.02f);
+                    transform.Translate(Vector3.forward * 0.2f);
                 break;
             case ATTACK:
 

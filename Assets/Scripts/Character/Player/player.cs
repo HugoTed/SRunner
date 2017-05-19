@@ -35,7 +35,7 @@ public class player : Unit
     void Start()
     {
         base.Start();
-        max_health = 50;
+        //max_health = 50;
         Cursor.visible = false;//隐藏鼠标
         m_capsule = GetComponent<CapsuleCollider>();
         rb = GetComponent<Rigidbody>();
@@ -187,9 +187,10 @@ public class player : Unit
     }
     void autoClimb()//墙边自动攀爬
     {
+        RaycastHit hit;
         Debug.DrawRay(new Vector3(transform.position.x, transform.position.y+2f, transform.position.z), transform.forward, Color.red,5f);
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), 1f)&& 
-            !Physics.Raycast(new Vector3(transform.position.x,transform.position.y+2f, transform.position.z), transform.TransformDirection(Vector3.forward), 5f))
+            !Physics.Raycast(new Vector3(transform.position.x,transform.position.y+2f, transform.position.z), transform.TransformDirection(Vector3.forward),5f))
         {
             climbing = true;
             rb.velocity = transform.TransformDirection(new Vector3(0,7f,0));//在墙边，给一个力，自动推上去            
@@ -258,7 +259,7 @@ public class player : Unit
         //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.1f))
         {
             rb.AddForce(transform.TransformDirection(Vector3.down) * 1f);
-            Debug.Log("ground");
+            //Debug.Log("ground");
             Onground = true;
 
         }

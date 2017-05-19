@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UIEnemyHp : MonoBehaviour {
 
-    public AIEnemy player;
+   // public Transform target;
+    public AIController player;
     public Image imageHp;
     public Text textHp;
     private float cur_hp_value, temp_hp_value;
@@ -13,6 +14,7 @@ public class UIEnemyHp : MonoBehaviour {
 	void Start () {
         cur_hp_value = 1.0f;
         temp_hp_value = 1.0f;
+        //target = GameObject.FindGameObjectsWithTag("Player")[0].transform;
     }
 	
 	// Update is called once per frame
@@ -23,5 +25,9 @@ public class UIEnemyHp : MonoBehaviour {
         imageHp.fillAmount = temp_hp_value;
         if (imageHp.fillAmount == cur_hp_value) {temp_hp_value = cur_hp_value;}
         textHp.text = player.max_health.ToString() + " | " + (int)(imageHp.fillAmount * 100) + "%";
-	}
+        //UI时刻对准玩家
+        //Vector3 relativePos = target.position - transform.position;
+        //Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
+        //transform.rotation = Quaternion.LookRotation(target.position - transform.position); ;
+    }
 }

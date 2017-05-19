@@ -5,6 +5,7 @@ using UnityEngine;
 public class Block : MonoBehaviour {
     public EnemyShoot enemyShoot;
     public Transform shootPoint;
+    public player player;
     // Use this for initialization
     void Start () {
 
@@ -18,6 +19,7 @@ public class Block : MonoBehaviour {
     {
         if (enemy.gameObject.tag == "Shell")
         {
+            player.ApplyHP(player.temp_damage);
             GameObject newShell = Instantiate(enemyShoot.shell, shootPoint.position, shootPoint.rotation);
             Rigidbody r = newShell.GetComponent<Rigidbody>();
             r.velocity = shootPoint.forward * enemyShoot.shootPower;

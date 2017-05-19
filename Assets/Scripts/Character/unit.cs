@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Unit : MonoBehaviour {
@@ -20,24 +21,27 @@ public class Unit : MonoBehaviour {
 
     //伤害
     public int damage;
+    public int temp_damage;
 
     //死亡效果
     public GameObject deadEffect;
 
     // Use this for initialization
-    public void Start () {
+    public void Start() {
         cur_health = max_health;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        damage = 0;
+    }
 
-    public void getDamage(int damage)
+    // Update is called once per frame
+    void Update() {
+
+    }
+
+    public void ApplyDamage(int damage)
     {
-        if (cur_health > damage){
+        if (cur_health > damage) {
             cur_health -= damage;
+            temp_damage = damage;
         }
         else {
             cur_health = 0;
@@ -45,11 +49,28 @@ public class Unit : MonoBehaviour {
             dead();
         }
     }
+    public void ApplyHP(int HP)
+    {
+        if (cur_health < max_health)
+        {
+            cur_health += HP;
+        }
+        if (cur_health >= max_health)
+        {
+            cur_health = max_health;
+        }
+
+    }
     public void dead()
     {
         if (state == DEAD) {
             //Instantiate(deadEffect, transform.position,transform.rotation);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        if (gameObject.tag == "Player") {
+            SceneManager.LoadScene("level0");
+        }
+        else { Destroy(gameObject); }
+        
     }
 }

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemyAttacked : MonoBehaviour {
 
-    public AIEnemy aiEnemy;
+    public UIMAINSCORE uiscore;
+    public AIController aiEnemy;
     public player player;
     // Use this for initialization
     void Start () {
-        aiEnemy = gameObject.GetComponent<AIEnemy>();
+        aiEnemy = gameObject.GetComponent<AIController>();
 
 	}
 	
@@ -20,8 +21,12 @@ public class EnemyAttacked : MonoBehaviour {
     {
         if(enemy.tag=="Player")
         {
-            aiEnemy.getDamage(player.damage);
-            //Destroy(this.gameObject);
+
+            //aiEnemy.ApplyDamage(player.damage);
+            //aiEnemy.SendMessage("ApplyDamage", player.damage);
+            uiscore.addscore(100);
+            Debug.Log("00000000000000000000000000000");
+            Destroy(this.gameObject);
         }
     }
 }

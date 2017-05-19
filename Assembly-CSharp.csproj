@@ -46,6 +46,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AI4Enemies\Scripts\AIAnimations.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\AIController.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\AIEnemyWaypointEditor.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\CollisionDamageController.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\Damage.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\EventListenerExample.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\HealthControllerExample.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\ShootingExample.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\SoundObject.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\SpawnPointBehaviour.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\TargetPointBehaviour.cs" />
+     <Compile Include="Assets\AI4Enemies\Scripts\WaypointBehaviour.cs" />
      <Compile Include="Assets\Scripts\Character\Enemy\AIEnemy.cs" />
      <Compile Include="Assets\Scripts\Character\Enemy\EnemyAttacked.cs" />
      <Compile Include="Assets\Scripts\Character\Enemy\EnemyShoot.cs" />
@@ -62,6 +74,8 @@
      <Compile Include="Assets\Scripts\System\reload_Scenes.cs" />
      <Compile Include="Assets\Scripts\UI\UIEnemyHp.cs" />
      <Compile Include="Assets\Scripts\UI\UILoad.cs" />
+     <Compile Include="Assets\Scripts\UI\UIMAINSCORE.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPlayerHP.cs" />
      <Compile Include="Assets\Scripts\UI\UImain.cs" />
      <Compile Include="Assets\Scripts\UI\UIoption.cs" />
      <Compile Include="Assets\Scripts\UI\UIoptionslidertextshow.cs" />
